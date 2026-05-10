@@ -1,0 +1,6 @@
+{
+  "name": "LegalNexus RAG",
+  "description": "An elegant, interactive legal research demo with zoomable graph visualization and AI-powered grounded answers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

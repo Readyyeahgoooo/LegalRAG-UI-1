@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --color-brand: #3b82f6;
+  --color-brand-glow: rgba(59, 130, 246, 0.5);
+}
+
+@layer base {
+  body {
+    @apply bg-[#F4F5F7] text-[#1D1D1F] antialiased selection:bg-blue-100;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 24px -1px rgba(0, 0, 0, 0.04), 
+                0 2px 8px -1px rgba(0, 0, 0, 0.02);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid #FFFFFF;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+    @apply rounded-[24px];
+  }
+
+  .mesh-bg {
+    background-color: #F8F9FB;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.03) 0, transparent 50%), 
+      radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.03) 0, transparent 50%);
+  }
+
+  .subtle-metal {
+    background: linear-gradient(135deg, #FDFDFF 0%, #F5F7FA 100%);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 1),
+                0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .pill-glow {
+    @apply relative after:absolute after:-inset-1 after:bg-blue-400/20 after:blur-lg after:rounded-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:-z-10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
